@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" ng-app="svg">
+<head>
+	<!--
+	** Angular+Svg App
+	** Licensed under the Apache License v2.0
+	** http://www.apache.org/licenses/LICENSE-2.0
+	** Built by Jay Kanakiya ( @techiejayk )
+	-->
+	<title>html app Boilerplate</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="html js Example"/>
+	<meta name="author" content="Jay Kanakiya">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/spectrum.css">
+	<link rel="stylesheet" href="css/common.css">
+
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/spectrum.js"></script>
+	<script src="js/libs/bootstrap.min.js"></script>
+	<script src="js/libs/angular.min.js"></script>
+	<script src="js/app.js"></script>
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+	<!-- The Common Navigation Navbar-->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">html5</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a  target="_blank" title="Angular js Tutorial" href="http://blog.jaykanakiya.com/angular-js-todo-list-sortable/">Go back to Blog-Post</a></li>
+            <li><a href="http://blog.jaykanakiya.com/contact/" title="Contact Jay Kanakiya">Contact Me</a></li>
+            <li><a href="https://github.com/kanakiyajay/Angular-js-todolist/" title="Github angular js">Github Link</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other Links <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a title="jQuery plugins" href="http://jquer.in/" target="_blank">A jQuery plugin a Day</a></li>
+                <li><a title="Tutorial" href="https://github.com/kanakiyajay/Angular-js-todolist/" target="_blank">Angular-js TodoList</a></li>
+                <li><a title="Twitter" href="https://twitter.com/techiejayk" target="_blank">@techiejayk</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+            		<a href="#" class="dropdown-toggle" data-toggle="dropdown">Share <b class="caret"></b></a>
+            		<ul class="dropdown-menu">
+            		<li><a href="https://twitter.com/intent/tweet?url=THEURL&text=Massive Angular-js-Todo-List-Tutorial&via=techiejayk">Twitter</a></li>
+            		<li><a href="https://facebook.com/sharer.php?u=THEURL">Facebook</a></li>
+           		<li><a href="https://plus.google.com/share?url=THEURL">Google+</a></li>
+            		</ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+	<div class="container" id="playground">
+		<div class="row">
+			<div class="col-xs-3">
+			</div>
+			<div class="col-xs-4 svg-heading">
+				<h3>Drawing a Circle using SVG</h3>
+			</div>
+		</div>
+		<div class="row" ng-controller="CircleCtrl">
+			<div class="col-xs-2 svg-example">
+				<svg width="300" height="200">
+					<circle ng-attr-cx="{{model.cx}}" ng-attr-cy="{{model.cy}}" ng-attr-r="{{model.r}}" ng-attr-fill="{{model.fill}}" />
+				</svg>
+			</div>
+			<div class="col-xs-4 col-xs-offset-1 range-slider">
+				<div class="form-group">
+					<span>attr-cx</span>
+					<input type="range" min="25" max="200" step="1" ng-model="model.cx">
+					<input type="text" ng-model="model.cx">
+				</div>
+				<div class="form-group">
+					<span>attr-cy</span>
+					<input type="range" min="25" max="200" step="1" ng-model="model.cy">
+					<input type="text" ng-model="model.cy">
+				</div>
+				<div class="form-group">
+					<span>r</span>
+					<input type="range" min="10" max="40" step="1" ng-model="model.r">
+					<input type="text" ng-model="model.r">
+				</div>
+				<div class="form-group">
+					<span>fill</span>
+					<ui-colorpicker ng-model="model.fill"></ui-colorpicker>
+				</div>
+			</div>
+			<div class="col-xs-5">
+				<p>The circle element is an SVG basic shape, used to create circles based on a center point and a radius</p>
+				<pre>
+&lt;svg width="300" height="200"&gt;
+	&lt;circle cx="{{model.cx}}" cy="{{model.cy}}" r="{{model.r}}" fill="{{model.fill}}" /&gt;
+&lt;/svg&gt;
+				</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3">
+
+			</div>
+			<div class="col-xs-4 svg-heading">
+				<h3>Drawing a Rectangle using SVG</h3>
+			</div>
+		</div>
+		<div class="row" ng-controller="RectCtrl">
+			<div class="col-xs-2 svg-example">
+				<svg width="300" height="200">
+					<rect ng-attr-x="{{model.x}}" ng-attr-y="{{model.y}}" ng-attr-width="{{model.width}}" ng-attr-height="{{model.height}}" ng-attr-fill="{{model.fill}}"/>
+				</svg>
+			</div>
+			<div class="col-xs-4 col-xs-offset-1 range-slider">
+				<div class="form-group">
+					<span>attr-x</span>
+					<input type="range" min="25" max="200" step="1" ng-model="model.x">
+					<input type="text" ng-model="model.x">
+				</div>
+				<div class="form-group">
+					<span>attr-y</span>
+					<input type="range" min="25" max="200" step="1" ng-model="model.y">
+					<input type="text" ng-model="model.y">
+				</div>
+				<div class="form-group">
+					<span>attr-width</span>
+					<input type="range" min="50" max="200" step="1" ng-model="model.width">
+					<input type="text" ng-model="model.width">
+				</div>
+				<div class="form-group">
+					<span>attr-height</span>
+					<input type="range" min="50" max="200" step="1" ng-model="model.height">
+					<input type="text" ng-model="model.height">
+				</div>
+				<!--<div class="form-group">
+					<span>attr-rx</span>
+					<input type="range" min="1" max="10" step="1" ng-model="model.rx">
+					<input type="text" ng-model="model.rx">
+				</div>
+				<div class="form-group">
+					<span>attr-ry</span>
+					<input type="range" min="1" max="10" step="1" ng-model="model.ry">
+					<input type="text" ng-model="model.ry">
+				</div>-->
+				<div class="form-group">
+					<span>fill</span>
+					<ui-colorpicker ng-model="model.fill"></ui-colorpicker>
+				</div>
+			</div>
+			<div class="col-xs-5">
+				<p>The rect element is an SVG basic shape, used to create rectangles based on the position of a corner and their width and height. It may also be used to create rectangles with rounded corners.</p>
+<pre>
+&lt;svg width="300" height="200"&gt;
+	&lt;rect x="{{model.x}}" y="{{model.y}}" width="{{model.width}}" height="{{model.height}}" fill="{{model.fill}}"/&gt;
+&lt;/svg&gt;
+</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-4 svg-heading">
+				<h3>Drawing an Ellipse with Svg</h3>
+			</div>
+		</div>
+		<div class="row" ng-controller="EllipseCtrl">
+			<div class="col-xs-2 svg-example">
+				<svg width="300" height="200">
+					<ellipse ng-attr-cx="{{model.cx}}" ng-attr-cy="{{model.cy}}" ng-attr-rx="{{model.rx}}" ng-attr-ry="{{model.ry}}" ng-attr-fill="{{model.fill}}" />
+				</svg>
+			</div>
+			<div class="col-xs-4 col-xs-offset-1 range-slider">
+				<div class="form-group">
+					<span>attr-cx</span>
+					<input type="range" min="25" max="200" step="1" ng-model="model.cx">
+					<input type="text" ng-model="model.cx">
+				</div>
+				<div class="form-group">
+					<span>attr-cy</span>
+					<input type="range" min="25" max="200" step="1" ng-model="model.cy">
+					<input type="text" ng-model="model.cy">
+				</div>
+				<div class="form-group">
+					<span>attr-rx</span>
+					<input type="range" min="10" max="50" step="1" ng-model="model.rx">
+					<input type="text" ng-model="model.rx">
+				</div>
+				<div class="form-group">
+					<span>attr-ry</span>
+					<input type="range" min="10" max="50" step="1" ng-model="model.ry">
+					<input type="text" ng-model="model.ry">
+				</div>
+				<div class="form-group">
+					<span>fill</span>
+					<ui-colorpicker ng-model="model.fill"></ui-colorpicker>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<p>The ellipse element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius.</p>
+<pre>
+&lt;svg width="300" height="200"&gt;
+	&lt;ellipse cx="{{model.cx}}" cy="{{model.cy}}" rx="{{model.rx}}" ry="{{model.ry}}" fill="{{model.fill}}" /&gt;
+&lt;/svg&gt;
+</pre>
+			</div>
+		</div>
+	</div>
+	<!--<script type="text/javascript" async>
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-33060097-3']);
+	  _gaq.push(['_setDomainName', 'jaykanakiya.com']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>-->
+</body>
+</html>

@@ -1,0 +1,25 @@
+#playground{
+	margin-top: 75px;
+}
+
+.svg-example{
+	border:1px dashed lightgray;
+}
+
+.svg-heading{
+	margin: 20px auto;
+}
+
+.range-slider span{
+	display: inline-block;
+	width: 50px;
+}
+
+.range-slider input[type="text"]{
+	width: 30px;
+}
+
+.range-slider input[type="range"]{
+	width: 200px;
+	margin-right:10px;
+}
