@@ -113,9 +113,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-3">
-
-			</div>
+			<div class="col-xs-3"></div>
 			<div class="col-xs-4 svg-heading">
 				<h3>Drawing a Rectangle using SVG</h3>
 			</div>
@@ -166,7 +164,7 @@
 				<p>The rect element is an SVG basic shape, used to create rectangles based on the position of a corner and their width and height. It may also be used to create rectangles with rounded corners.</p>
 <pre>
 &lt;svg width="300" height="200"&gt;
-	&lt;rect x="{{model.x}}" y="{{model.y}}" width="{{model.width}}" height="{{model.height}}" fill="{{model.fill}}"/&gt;
+ &lt;rect x="{{model.x}}" y="{{model.y}}" width="{{model.width}}" height="{{model.height}}" fill="{{model.fill}}"/&gt;
 &lt;/svg&gt;
 </pre>
 			</div>
@@ -213,7 +211,59 @@
 				<p>The ellipse element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius.</p>
 <pre>
 &lt;svg width="300" height="200"&gt;
-	&lt;ellipse cx="{{model.cx}}" cy="{{model.cy}}" rx="{{model.rx}}" ry="{{model.ry}}" fill="{{model.fill}}" /&gt;
+ &lt;ellipse cx="{{model.cx}}" cy="{{model.cy}}" rx="{{model.rx}}" ry="{{model.ry}}" fill="{{model.fill}}" /&gt;
+&lt;/svg&gt;
+</pre>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3"></div>
+			<div class="col-xs-4 svg-heading">
+				<h3>Drawing an Line with Svg</h3>
+			</div>
+		</div>
+		<div class="row" ng-controller="LineCtrl">
+			<div class="col-xs-2 svg-example">
+				<svg width="300" height="200">
+					<line ng-attr-x1="{{model.x1}}" ng-attr-y1="{{model.y1}}" ng-attr-x2="{{model.x2}}" ng-attr-y2="{{model.y2}}" ng-attr-stroke="{{model.stroke}}" ng-attr-stroke-width="{{model.strokeWidth}}"/>
+				</svg>
+			</div>
+			<div class="col-xs-4 col-xs-offset-1 range-slider">
+				<div class="form-group">
+					<span>attr-x1</span>
+					<input type="range" min="25" max="200" step="1" ng-model="model.x1">
+					<input type="text" ng-model="model.x1">
+				</div>
+				<div class="form-group">
+					<span>attr-y1</span>
+					<input type="range" min="25" max="200" step="1" ng-model="model.y1">
+					<input type="text" ng-model="model.y1">
+				</div>
+				<div class="form-group">
+					<span>attr-x2</span>
+					<input type="range" min="10" max="50" step="1" ng-model="model.x2">
+					<input type="text" ng-model="model.x2">
+				</div>
+				<div class="form-group">
+					<span>attr-y2</span>
+					<input type="range" min="10" max="50" step="1" ng-model="model.y2">
+					<input type="text" ng-model="model.y2">
+				</div>
+				<div class="form-group">
+					<span>attr-y2</span>
+					<input type="range" min="1" max="10" step="1" ng-model="model.strokeWidth">
+					<input type="text" ng-model="model.strokeWidth">
+				</div>
+				<div class="form-group">
+					<span>stroke</span>
+					<ui-colorpicker ng-model="model.stroke"></ui-colorpicker>
+				</div>
+			</div>
+			<div class="col-xs-4">
+				<p>The ellipse element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius.</p>
+<pre>
+&lt;svg width="300" height="200"&gt;
+ &lt;line x1="{{model.x1}}" y1="{{model.y1}}" x2="{{model.x2}}" y2="{{model.y2}}" stroke="{{model.stroke}}" stroke-width="{{model.strokeWidth}}"/&gt;
 &lt;/svg&gt;
 </pre>
 			</div>

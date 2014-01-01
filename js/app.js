@@ -38,6 +38,17 @@ App.controller("EllipseCtrl",function  ($scope) {
 	};
 });
 
+App.controller("LineCtrl",function  ($scope) {
+	$scope.model = {
+		x1 : 100,
+		y1 : 100,
+		x2 : 34,
+		y2 : 10,
+		stroke : "black",
+		strokeWidth : 5
+	};
+});
+
 /* Directive For Spectrum based Color-picker*/
 
 App.directive('uiColorpicker', function() {
