@@ -72,7 +72,14 @@
 		<div class="jumbotron">
 			<h1>Understanding SVG Elements using interactive elements</h1>
 		</div>
-		<div class="row">
+		<div class="list-group">
+			<a class="list-group-item" href="#circle">Circle</a>
+			<a class="list-group-item" href="#rectangle">Rectangle</a>
+			<a class="list-group-item" href="#ellipse">Ellipse</a>
+			<a class="list-group-item" href="#line">Line</a>
+			<a class="list-group-item" href="#polyline">PolyLine</a>
+		</div>
+		<div class="row" id="circle">
 			<div class="col-xs-3">
 			</div>
 			<div class="col-xs-4 svg-heading">
@@ -115,7 +122,7 @@
 				</pre>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="rectangle">
 			<div class="col-xs-3"></div>
 			<div class="col-xs-4 svg-heading">
 				<h3>Drawing a Rectangle using SVG</h3>
@@ -148,16 +155,6 @@
 					<input type="range" min="50" max="200" step="1" ng-model="model.height">
 					<input type="text" ng-model="model.height">
 				</div>
-				<!--<div class="form-group">
-					<span>attr-rx</span>
-					<input type="range" min="1" max="10" step="1" ng-model="model.rx">
-					<input type="text" ng-model="model.rx">
-				</div>
-				<div class="form-group">
-					<span>attr-ry</span>
-					<input type="range" min="1" max="10" step="1" ng-model="model.ry">
-					<input type="text" ng-model="model.ry">
-				</div>-->
 				<div class="form-group">
 					<span>fill</span>
 					<ui-colorpicker ng-model="model.fill"></ui-colorpicker>
@@ -178,7 +175,7 @@
 				<h3>Drawing an Ellipse with Svg</h3>
 			</div>
 		</div>
-		<div class="row" ng-controller="EllipseCtrl">
+		<div class="row" ng-controller="EllipseCtrl" id="ellipse">
 			<div class="col-xs-2 svg-example">
 				<svg width="300" height="200">
 					<ellipse ng-attr-cx="{{model.cx}}" ng-attr-cy="{{model.cy}}" ng-attr-rx="{{model.rx}}" ng-attr-ry="{{model.ry}}" ng-attr-fill="{{model.fill}}" />
@@ -219,7 +216,7 @@
 </pre>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="line">
 			<div class="col-xs-3"></div>
 			<div class="col-xs-4 svg-heading">
 				<h3>Drawing an Line with Svg</h3>
@@ -271,7 +268,7 @@
 </pre>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="polyline">
 			<div class="col-xs-3">
 			</div>
 			<div class="col-xs-4 svg-heading">
@@ -283,12 +280,12 @@
 				<svg width="300" height="200" style="position:absolute;top:0;left:0">
 					<polyline ng-attr-fill="{{model.fill}}" ng-attr-stroke="{{model.stroke}}" ng-attr-points="{{getPoints()}}"/>
 				</svg>
-				<div draggable data-x="20" data-y="100" data-ponindex="0">1</div>
-				<div draggable data-x="40" data-y="60" data-ponindex="1">2</div>
-				<div draggable data-x="70" data-y="80" data-ponindex="2">3</div>
-				<div draggable data-x="100" data-y="20" data-ponindex="3">4</div>
+				<div draggable data-x="100" data-y="20" data-ponindex="0">1</div>
+				<div draggable data-x="60" data-y="40" data-ponindex="1">2</div>
+				<div draggable data-x="80" data-y="70" data-ponindex="2">3</div>
+				<div draggable data-x="20" data-y="100" data-ponindex="3">4</div>
 			</div>
-			<div class="col-xs-4 col-xs-offset-1 range-slider">
+			<div class="col-xs-3 col-xs-offset-1 range-slider">
 				<div class="form-group">
 					<span>stroke</span>
 					<ui-colorpicker ng-model="model.stroke"></ui-colorpicker>
@@ -298,8 +295,10 @@
 					<ui-colorpicker ng-model="model.fill"></ui-colorpicker>
 				</div>
 			</div>
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<p>The polyline element is an SVG basic shape, used to create a series of straight lines connecting several points. Typically a polyline is used to create open shapes</p>
+				<p>The points attr contains a collection of points denoted by x,y co-ordinates followed by a space.</p>
+				<p>Drag the blue rectangles and observe how the code changes.</p>
 				<pre>
 &lt;polyline fill="{{model.fill}}" stroke="{{model.stroke}}" points="{{getPoints()}}"/&gt;
 				</pre>

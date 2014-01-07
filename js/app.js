@@ -115,12 +115,9 @@ App.directive('uiColorpicker', function() {
 App.directive('draggable', function($document) {
 	return {
 		restrict : 'EA',
-		require : '?ngModel',
 		transclude : true,
 		link: function(scope, element, attr) {
-			var index = parseInt(attr.ponindex);
-			console.log(index);
-			var startX = 0, startY = 0, x = attr.x, y = attr.y;
+			var startX = 0, startY = 0, x = attr.x, y = attr.y,index = parseInt(attr.ponindex);
 			element.css({
 				top:attr.y+'px',
 				left:attr.x+'px',
@@ -143,9 +140,10 @@ App.directive('draggable', function($document) {
 			function mousemove(event) {
 				y = event.pageY - startY;
 				x = event.pageX - startX;
+				//-3 to push it to center
 				element.css({
-					top: y + 'px',
-					left:  x + 'px'
+					top: (y-3) + 'px',
+					left:  (x-3) + 'px'
 				});
 				scope.$apply(function  () {
 					scope.points[index].top = y;
