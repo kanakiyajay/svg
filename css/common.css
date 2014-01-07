@@ -23,3 +23,8 @@
 	width: 200px;
 	margin-right:10px;
 }
+
+.posr{
+	position: relative;
+	height: 200px;
+}
